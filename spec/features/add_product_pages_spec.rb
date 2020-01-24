@@ -26,6 +26,15 @@ describe "the add a product process" do
     expect(page).to have_content 'Product successfully added!'
     expect(page).to have_content 'Milk'
   end
+
+  it "gives an error when no product is entered" do
+    visit new_product_path
+    click_on 'Create Product'
+    # save_and_open_page
+    expect(page).to have_content "Product Not successfully added!"
+  end
+
+
 end
 
 describe "root page" do
