@@ -1,6 +1,8 @@
 <h3><%= @product.name %></h3>
 <h4>Made in: <%= @product.country_of_origin %></h4>
 <h4>$<%= @product.cost %></h4>
+<h4>Zipcode: <%= @product.zip %></h4>
+<h4>Weather: <%= @weather %></h4>
 
 <% if @product.reviews.any? %>
 <h4>Reviews:</h4>

@@ -30,6 +30,8 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    weather_object = Weather.new(@product.zip)
+    @weather = weather_object.get_weather()
   end
 
   def update
@@ -49,7 +51,7 @@ class ProductsController < ApplicationController
 
   private
     def product_params
-      params.require(:product).permit(:name, :cost, :country_of_origin)
+      params.require(:product).permit(:name, :cost, :country_of_origin, :zip)
     end
 
 end
