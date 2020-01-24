@@ -34,6 +34,19 @@ describe "the add a product process" do
     expect(page).to have_content "Product Not successfully added!"
   end
 
+  # it "deletes a product" do
+  #   visit products_path
+  #   click_link 'New Product'
+  #   fill_in 'Name', :with => 'Milk'
+  #   fill_in 'Cost', :with => 4
+  #   fill_in 'Country of origin', :with => 'usa'
+  #   click_on 'Create Product'
+  #   save_and_open_page
+  #   first("Milk").click_link
+  #   click_on 'Delete product'
+  #   expect(page).to have_content "There are no products yet."
+  # end
+
 
 end
 
