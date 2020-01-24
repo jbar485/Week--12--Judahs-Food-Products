@@ -17,4 +17,12 @@
 <p>No products to display</p>
 <% end %>
 
+
+<% if current_user %>
+
+<% if current_user.admin %>
 <%= link_to '<button type="button" class="button">New Product</button>'.html_safe, new_product_path %>
+
+<% end %>
+
+<% end %>
