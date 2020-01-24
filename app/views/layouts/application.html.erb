@@ -27,7 +27,7 @@
           <% if current_user %>
           <%= current_user.email %> | <%= ( current_user.admin === true ? "Admin" : "User" ) %> | <%= link_to "Sign out", '/signout' %>
           <% else %>
-          <%= link_to "Sign up", 'signup' %> | <%= link_to "Sign in", '/signin' %>
+          <%= link_to "Sign up", 'signup' %> | <%= link_to "Sign-in", '/signin' %>
           <% end %>
         </ul>
       </div>
