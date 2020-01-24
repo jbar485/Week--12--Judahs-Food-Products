@@ -1,0 +1,23 @@
+<h3><%= @product.name %></h3>
+<h4>Made in: <%= @product.country_of_origin %></h4>
+<h4>$<%= @product.cost %></h4>
+
+<% if @product.reviews.any? %>
+<h4>Reviews:</h4>
+
+<% @product.reviews.each do |review| %>
+  <p>
+    "<%= link_to review.content_body, product_review_path(@product, review) %>"
+  </p>
+<% end %>
+<% else %>
+<p>No reviews are listed for this product.</p>
+<% end %>
+
+<%= link_to '<button type="button" class="button">Add a Review</button>'.html_safe, new_product_review_path(@product) %>
+
+
+<%= link_to '<button type="button" class="button">Edit</button>'.html_safe, edit_product_path %>
+
+<%= link_to '<button type="button" class="button">Delete</button>'.html_safe, product_path(@product), :data => {:confirm => "You sure?",
+:method => "delete"}  %>
