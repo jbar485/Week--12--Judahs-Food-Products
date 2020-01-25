@@ -16,6 +16,7 @@ class Product < ApplicationRecord
   )}
 
   validates :name, presence: true
+  validates :zip, presence: true
   validates :cost, presence: true
   validates :country_of_origin, presence: true
   validates_length_of :name, maximum: 100

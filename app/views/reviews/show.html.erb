@@ -3,14 +3,14 @@
 <h4>"<%= @review.content_body %>"</h4>
 <h4>By: <%= @review.author %></h4>
 
-<p><%= link_to "Return to Product", product_path(@product) %></p>
+<%= link_to '<button type="button" class="button jello-horizontal">Back to Product</button>'.html_safe, product_path(@product) %>
 
 <% if current_user %>
 <% if current_user.admin %>
-<p><%= link_to "Edit Review", edit_product_review_path(@product, @review) %></p>
-<p><%= link_to "Delete Review", product_review_path(@product, @review),
-  :data => {:confirm => "Are you sure?",
-  :method => "delete"} %></p>
+<%= link_to '<button type="button" class="button jello-horizontal">Edit Review</button>'.html_safe, edit_product_review_path(@product, @review) %>
 
-  <% end %>
-  <% end %>
+<%= link_to '<button type="button" class="button jello-horizontal">Delete Review</button>'.html_safe, product_review_path(@product, @review), :data => {:confirm => "You sure?",
+:method => "delete"}  %>
+
+<% end %>
+<% end %>

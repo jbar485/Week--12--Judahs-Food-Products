@@ -3,6 +3,7 @@ FactoryBot.define do
     name {'Milk'}
     cost { 4.50 }
     country_of_origin { 'usa' }
+    zip { "98642" }
   end
 
   factory(:review) do

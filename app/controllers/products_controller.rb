@@ -30,8 +30,12 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-    weather_object = Weather.new(@product.zip)
-    @weather = weather_object.get_weather()
+    if @product.zip == nil
+      @weather = "Currently Unavailable"
+    else
+      weather_object = Weather.new(@product.zip)
+      @weather = weather_object.get_weather()
+    end
   end
 
   def update

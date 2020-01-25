@@ -17,12 +17,12 @@
 <% end %>
 
 <% if current_user %>
-<%= link_to '<button type="button" class="button">Add a Review</button>'.html_safe, new_product_review_path(@product) %>
+<%= link_to '<button type="button" class="button jello-horizontal">Add a Review</button>'.html_safe, new_product_review_path(@product) %>
 
 <% if current_user.admin %>
-<%= link_to '<button type="button" class="button">Edit</button>'.html_safe, edit_product_path %>
+<%= link_to '<button type="button" class="button jello-horizontal">Edit</button>'.html_safe, edit_product_path %>
 
-<%= link_to '<button type="button" class="button">Delete</button>'.html_safe, product_path(@product), :data => {:confirm => "You sure?",
+<%= link_to '<button type="button" class="button jello-horizontal">Delete</button>'.html_safe, product_path(@product), :data => {:confirm => "You sure?",
 :method => "delete"}  %>
 
 <% end %>
